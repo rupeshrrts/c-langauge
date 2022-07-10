@@ -1,0 +1,111 @@
+// // doubly linked listb insert at big
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// struct node
+// {
+//     struct node *prev;
+//     int data;
+//     struct node *link;
+// };
+
+// struct node *HEAD = NULL;
+
+// void insert(int data)
+// {
+//     struct node *newNode = (struct node *)malloc(sizeof(struct node));
+//     newNode->prev = NULL;
+//     newNode->data = data;
+//     newNode->link = NULL;
+    
+//     if (HEAD == NULL)
+//     {
+//         HEAD = newNode;
+//     }
+//     else
+//     {
+//         HEAD->prev = newNode;
+//         newNode->link = HEAD;
+//         HEAD = newNode;
+//     }
+// }
+
+
+// void dis()
+// {
+//     printf("\nDisplay the all inserted data\n");
+//     struct node *temp = HEAD;
+//     while (temp != NULL)
+//     {
+//         printf("%d\n", temp->data);
+//         temp = temp->link;
+//     }
+// }
+
+// int main()
+// {
+//     insert(25);
+//     insert(10);
+//     insert(15);
+//     insert(20);
+//     insert(80);
+//     insert(60);
+//     dis();
+// }
+
+
+// doubly linked listb insert at big
+
+#include <stdio.h>
+#include <stdlib.h>
+struct node
+{
+    struct node *prev;
+    int data;
+    struct node *link;
+};
+
+struct node *HEAD = NULL;
+
+void insert()
+{
+    struct node *newNode = (struct node *)malloc(sizeof(struct node));
+    printf("Enter the node data :\n");
+    scanf("%d",&newNode->data);
+    newNode->prev = NULL;
+    newNode->link = NULL;
+    
+    if (HEAD == NULL)
+    {
+        HEAD = newNode;
+    }
+    else
+    {
+        HEAD->prev = newNode;
+        newNode->link = HEAD;
+        HEAD = newNode;
+    }
+}
+
+
+void dis()
+{
+    printf("\nDisplay the all inserted data\n");
+    struct node *temp = HEAD;
+    while (temp != NULL)
+    {
+        printf("%d\n", temp->data);
+        temp = temp->link;
+    }
+}
+
+int main()
+{
+    insert();
+    insert();
+    insert();
+    insert();
+    insert();
+    insert();
+    dis();
+}
